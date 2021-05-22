@@ -152,6 +152,11 @@ print("Mean Absolute Error: {}".format(mae))
 print("R2 Score: {}".format(r2))
 
 
+
+minimum = int(min(df50['Open']))
+maximum = int(max(df50['Open']))
+
+
 def get_errors():
     
     errors = []
@@ -168,6 +173,14 @@ def get_errors():
 get_errors()
 
 
+def predict_price(period):
+    real_data = [inputs[len(inputs)+1-period: len(inputs+1), 0]]
+    real_data = np.array(real_data)
+    real_data = np.reshape(real_data, (real_data.shape[0], real_data.shape[1], 1))
+    prediction = model.predict(real_data)
+    prediction = scaler.inverse_transform(prediction)
+    return prediction
+    
 #RSI
 df50['TrendValue'][0] = np.nan
 upday, downday = df50.copy(), df50.copy()
@@ -248,3 +261,20 @@ print("Classification Report:\n")
 cr = classification_report(y_test, y_pred)
 print(cr)
 
+
+
+real_data1 = []
+for i in range(0, forecast_days):
+    ele = random.randint(minimum, maximum)
+    real_data1.append(ele)
+real_data = np.array(real_data1).reshape(-1,1)
+real_data = scaler.fit_transform(real_data)
+real_data = np.reshape(real_data, (real_data.shape[0], real_data.shape[1], 1))
+
+def printans(prediction):
+    answer = str(prediction).strip("[[]]")
+    print("The model predicts {} as the forecast for the next day ".format(answer))
+
+prediction = model.predict(real_data)
+prediction = scaler.inverse_transform(prediction)
+printans(prediction)
