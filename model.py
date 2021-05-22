@@ -261,12 +261,11 @@ print("Classification Report:\n")
 cr = classification_report(y_test, y_pred)
 print(cr)
 
-
-
 real_data1 = []
 for i in range(0, forecast_days):
     ele = random.randint(minimum, maximum)
     real_data1.append(ele)
+
 real_data = np.array(real_data1).reshape(-1,1)
 real_data = scaler.fit_transform(real_data)
 real_data = np.reshape(real_data, (real_data.shape[0], real_data.shape[1], 1))
@@ -278,3 +277,6 @@ def printans(prediction):
 prediction = model.predict(real_data)
 prediction = scaler.inverse_transform(prediction)
 printans(prediction)
+
+
+#send last 2 months data
