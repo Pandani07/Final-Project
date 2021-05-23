@@ -1,8 +1,42 @@
 {% extends "header.html" %}
 {% block content %}
-    {% for post in posts %}
-    <h1>{{ post.title }}</h1>
-        <p>By {{ post.author }} on {{ post.date_posted }}</p>
-        <p>{{ post.content }}</p>
-    {% endfor %}
+
+
+    <div style="margin-top: 20px;" class="container">
+        
+        <center>
+            <h1>Trend Detection</h1>
+        </center>
+        <form action="{{url_for('detect_trend')}}" method="POST" class="border rounded" style="padding: 20px;">
+            
+            <div class="form-row">
+                <div class="form-group col-md-3">
+                    <label>RSI</label>
+                    <input name="rsi" type="text" class="form-control">
+                </div>
+
+                <div class="form-group col-md-3">
+                    <label>Close Rate of Change</label>
+                    <input name="crc" type="text" class="form-control">
+                </div>
+
+                <div class="form-group col-md-3">
+                    <label>OBV</label>
+                    <input name="obv" type="text" class="form-control">
+                </div>
+
+                <div class="form-group col-md-3">
+                    <label>VWAP</label>
+                    <input name="vwap" type="text" class="form-control">
+                </div>
+                
+            </div>
+            
+            <div class="text-center">
+                <button type="submit" class="btn btn-md btn-outline-primary rounded-pill">Detect Trend</button>
+            </div>
+
+        </form>
+    </div>
+
 {% endblock content %}
