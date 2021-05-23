@@ -5,6 +5,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
 from sklearn.model_selection import train_test_split
 import random
+import pickle
 
 df50 = getdataset()
 
@@ -88,9 +89,10 @@ print("Classification Report:\n")
 cr = classification_report(y1_test, y_pred)
 print(cr)
 
+pkl_filename = "pickle_model.pkl"
+with open(pkl_filename, 'wb') as file:
+    pickle.dump(classifier, file)
+    
 
-
-minimum = int(min(df50['Open']))
-maximum = int(max(df50['Open']))
 
 

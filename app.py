@@ -14,10 +14,12 @@ import plotly.express as px
 import json
 from preprocessing import getdataset
 
+
 df50 = getdataset()
 
-detection_model = pickle.load(open('classifier.pkl', 'rb'))
-
+with open('pickle_model.pkl', 'rb') as file:
+    pickle_model = pickle.load(file)
+    
 app = Flask(__name__)
 
 
@@ -52,7 +54,8 @@ def detect_trend():
     crc = request.form['crc']
     obv = request.form['obv']
     vwap = request.form['vwap']
-    res = detection_model.predict([[rsi, crc, obv, vwap]])
+    res = pickle_model.predict([[rsi, crc, obv, vwap]])
+    print(res)
     return render_template('detect_trend.html', data=res)
 
 # @app.route('/send', methods=['GET', 'POST'])
