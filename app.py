@@ -1,7 +1,20 @@
 from flask import Flask, redirect, url_for, request, render_template
 import pickle
-# import model
+import pandas as pd
+import plotly.express as px
+import matplotlib.pyplot as plt
+import chart_studio.plotly as py
+import plotly.graph_objects as go
+from IPython.display import HTML
+import seaborn as sns
+import numpy as np
+import random
+import plotly
+import plotly.express as px
+import json
+from preprocessing import getdataset
 
+df50 = getdataset()
 
 detection_model = pickle.load(open('classifier.pkl', 'rb'))
 
@@ -52,7 +65,9 @@ def detect_trend():
 
 @app.route('/visualize', methods=['GET', 'POST'])
 def visualize():
-    return render_template("visualize.html", posts=posts)
+    fig=px.line(df50,x='Date',y='Open', title='Nifty 50 Closing Price vs Date')
+    image = HTML(fig.to_html())
+    return render_template("visualize.html",image=image)
 
 @app.route('/projectlink', methods=['GET', 'POST'])
 def projectlink():
