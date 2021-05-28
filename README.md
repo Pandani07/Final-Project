@@ -26,6 +26,8 @@ Server will be running on http://127.0.0.1:5000/
 
 ### We have added pikl files to gitignore due to storage constraints. Goodle drive link with all pikl files has been provided. Extract into a folder called 'pikl_files' in project directory. Pikl model for NIFTY 50 is the 'pickle_model.pkl' in project root directory. Delete pikl_files folder whenever you are pushing into Github.
 
+pikl models drive link - https://drive.google.com/drive/folders/1aD0zK3_UQ1WJuHdNNgO49vIW_88xVwhb?usp=sharing
+
 ### Project Directory structure:
 
 final-project
