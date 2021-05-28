@@ -32,6 +32,7 @@ final-project
 <ul>
    <li>pikl_files</li>
    <li>static</li>
+   <ul><li>styles</li></ul>
    <li>templates</li>
    <li>app.py</li>
    <li>indicators.p</li>
