@@ -6,16 +6,42 @@
             <h1>Trend Detection</h1>
         </center>
 
-        <form action="{{url_for('trend')}}" method="POST" class="border rounded" style="padding: 20px;">
+        <!-- <form action="{{url_for('trend')}}" method="POST" class="border rounded" style="padding: 20px;"> -->
             
-            <div class="text-center">
-                <h4>Get RSI value for NIFTY 50</h4>
-            </div>
-            <br>
-            <div class="text-center">
-                <button type="submit" class="btn btn-md btn-outline-primary rounded-pill">Get RSI</button>
-            </div>
-            <br>
+            <form action="{{url_for('detect_trend')}}" method="POST" style="padding: 20px;">
+
+                <div class="text-center">
+                    <h4>Get RSI value for 
+                        <select style="padding: 5px;" name="company" id="">
+                            <option value="NIFTY 50">NIFTY 50</option>
+                            <option value="Adani">Adani</option>
+                            <option value="Axis">Axis Bank</option>
+                            <option value="Cipla">Cipla</option>
+                            <option value="HCL">HCL</option>
+                            <option value="HDFC Bank">HDFC Bank</option>
+                            <option value="Hindustan Unilever">Hindustan Unilever</option>
+                            <option value="Infosys">Infosys</option>
+                            <option value="ITC">ITC</option>
+                            <option value="JSW Steel">JSW Steel</option>
+                            <option value="ONGC">ONGC</option>
+                            <option value="Reliance">Reliance</option>
+                            <option value="TATA Consultancy Services">TATA Consultancy Services</option>
+                            <option value="Tech Mahindra">Tech Mahindra</option>
+                            <option value="UPL">UPL</option>
+                            <option value="Wipro">Wipro</option>
+                        </select>
+                    </h4>
+                </div>
+
+                
+                <br>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-md btn-outline-primary rounded-pill">Get RSI</button>
+                </div>
+                <br>
+
+            </form>
+
 
             <div class="text-center">
                 <h4>The RSI value is: {{rsi}}</h4>
@@ -28,7 +54,7 @@
             </div>
             <br>
 
-        </form>
+        <!-- </form> -->
     </div>
 
 {% endblock content %}

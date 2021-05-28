@@ -8,7 +8,7 @@ import plotly.graph_objects as go
 from IPython.display import HTML
 import plotly.express as px
 from preprocessing import getdataset
-from getrsi import getrsi
+# from getrsi import getrsi
 import pickle
 #from indicators  import buildclassifier
 
@@ -34,15 +34,22 @@ def trend():
 
 @app.route('/trend', methods=['POST'])
 def detect_trend():
-    rsi = getrsi()
-    res = pickle_model.predict([[rsi]])
-    trend_value=str(res).strip('[]')
-    print(trend_value)
-    if trend_value=='1':
-        trend ='Uptrend'
-    else:
-        trend = 'Downtrend'
-    return render_template('trend.html', rsi=rsi, trend=trend)
+    
+    company = request.form['company']
+
+    print()
+
+    # rsi = getrsi()
+    # res = pickle_model.predict([[rsi]])
+    # trend_value=str(res).strip('[]')
+    # print(trend_value)
+    # if trend_value=='1':
+    #     trend ='Uptrend'
+    # else:
+    #     trend = 'Downtrend'
+    # return render_template('trend.html', rsi=rsi, trend=trend)
+
+    return render_template('trend.html')
 
 
 @app.route('/visualize', methods=['GET', 'POST'])
