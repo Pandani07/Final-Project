@@ -22,3 +22,22 @@ To enable them in other operations, rebuild TensorFlow with the appropriate comp
 Tensorflow/ LSTM model loaded <tensorflow.python.keras.engine.sequential.Sequential object at 0x000002CDBE0C4E50>* *
 
 Server will be running on http://127.0.0.1:5000/ 
+
+
+## We have added pikl files to gitignore due to storage constraints. Goodle drive link with all pikl files has been provided. Extract into a folder called 'pikl_files' in project directory. Pikl model for NIFTY 50 is the 'pickle_model.pkl' in project root directory.
+
+## Project Directory structure:
+
+final-project
+    -pikl_files
+    -static
+        -styles
+    -templates
+    -app.py
+    -indicators.py
+    -mldlfile.py
+    -model_100.h5
+    -neuralnetwork.py
+    -NIFTY 50.csv
+    -pickle_model.pkl
+    -preprocessing.py
