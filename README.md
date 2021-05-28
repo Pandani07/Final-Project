@@ -29,15 +29,15 @@ Server will be running on http://127.0.0.1:5000/
 ## Project Directory structure:
 
 final-project
-    -pikl_files
-    -static
-        -styles
-    -templates
-    -app.py
-    -indicators.py
-    -mldlfile.py
-    -model_100.h5
-    -neuralnetwork.py
-    -NIFTY 50.csv
-    -pickle_model.pkl
-    -preprocessing.py
+    *pikl_files
+    *static
+        *styles
+    *templates
+    *app.py
+    *indicators.py
+    *mldlfile.py
+    *model_100.h5
+    *neuralnetwork.py
+    *NIFTY 50.csv
+    *pickle_model.pkl
+    *preprocessing.py
