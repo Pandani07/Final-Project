@@ -1,61 +1,60 @@
-<html>
+{% extends "header.html" %}
+{% block content %}
+    <div style="margin-top: 20px;" class="container">
+        
+        <center>
+            <h1>Trend Detection</h1>
+        </center>
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Stock Prediction</title>
-        <link rel="icon"  href="favicon.ico"/>
+        <!-- <form action="{{url_for('trend')}}" method="POST" class="border rounded" style="padding: 20px;"> -->
+            
+            <form action="{{url_for('detect_trend')}}" method="POST" style="padding: 20px;">
 
-        <!-- * CSS Files -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>    
-        <!-- Importing Bootstrap, Google Fonts and FontAwesome -->
-        <link href="https://fonts.googleapis.com/css2?family=Oxygen&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.0/css/all.css" integrity="sha384-OLYO0LymqQ+uHXELyx93kblK5YIS3B2ZfLGBmsJaUyor7CpMTBsahDHByqSuWW+q" crossorigin="anonymous">
-    </head>
-    <body>
-        <div class="header">
-            <nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background-color:#070707 ;">
-                <div class="container">
-                    <h3 class="navbar-brand">Stock Prediction</h3>
+                <div class="text-center">
+                    <h4>Get RSI value for 
+                        <select style="padding: 5px;" name="company" id="">
+                            <option value="NIFTY 50">NIFTY 50</option>
+                            <option value="Adani">Adani</option>
+                            <option value="Axis">Axis Bank</option>
+                            <option value="Cipla">Cipla</option>
+                            <option value="HCL">HCL</option>
+                            <option value="HDFC Bank">HDFC Bank</option>
+                            <option value="Hindustan Unilever">Hindustan Unilever</option>
+                            <option value="Infosys">Infosys</option>
+                            <option value="ITC">ITC</option>
+                            <option value="JSW Steel">JSW Steel</option>
+                            <option value="ONGC">ONGC</option>
+                            <option value="Reliance">Reliance</option>
+                            <option value="TATA Consultancy Services">TATA Consultancy Services</option>
+                            <option value="Tech Mahindra">Tech Mahindra</option>
+                            <option value="UPL">UPL</option>
+                            <option value="Wipro">Wipro</option>
+                        </select>
+                    </h4>
                 </div>
-            </nav>
-            <nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background-color: rgb(141, 141, 141);">
-                <div class="container">
-                    
-                        <button class="navbar-toggler" id="menuButton" style="outline: none; border: none;" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                            <!-- <i class="fas fa-ellipsis-h"></i>
-                            <svg id="menuIcon"></svg> -->
-                            Menu
-                        </button>
-                    
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav mr-auto">
-        
-                            <li class="nav-item">
-                                <a class="nav-link textshade" style="color: white;" href="/">Home</a>
-                            </li>
-        
-                            <li class="nav-item">
-                                <a class="nav-link textshade" style="color: white;" href="predict">Predict Price</a>
-                            </li>
-                            
-                            <li class="nav-item">
-                                <a class="nav-link textshade" style="color: white;" href="trend">Trend Detection</a>
-                            </li>
-        
-                            <li class="nav-item">
-                                <a class="nav-link textshade" style="color: white;" href="visualize">Visualization</a>
-                            </li>
 
-                            <li class="nav-item">
-                                <a class="nav-link textshade" style="color: white;" href="projectlink">Project Link</a>
-                            </li>
-        
-                        </ul>
-                    </div>
+                
+                <br>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-md btn-outline-primary rounded-pill">Get RSI</button>
                 </div>
-            </nav>
-        </div>
-    </body>
-</html>
+                <br>
+
+            </form>
+
+
+            <div class="text-center">
+                <h4>The RSI value is: {{rsi}}</h4>
+            </div>
+            <br>
+
+
+            <div class="text-center">
+                <h4>Trend is: {{trend}}</h4>
+            </div>
+            <br>
+
+        <!-- </form> -->
+    </div>
+
+{% endblock content %}
