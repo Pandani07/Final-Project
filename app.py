@@ -10,30 +10,27 @@ import plotly.express as px
 from preprocessing import getdataset
 from scraping import get_rsi, get_nse_rsi
 import pickle
-#from indicators  import buildclassifier
 
   
 pickle_dict = {
-    'Adani': './pikl_files/adani.pkl',
-    'Axis': './pikl_files/Axis.pkl',
-    'Cipla': './pikl_files/cipla.pkl',
-    'HCL':'./pikl_files/hcl.pkl',
-    'HDFC Bank':'./pikl_files/hdfcbank.pkl',
-    'Hindustan Unilever': './pikl_files/hindunilvr.pkl',
-    'Infosys': './pikl_files/infosys.pkl',
-    'ITC': './pikl_files/itc.pkl',
-    'JSW Steel': './pikl_files/jsw.pkl',
-    'ONGC': './pikl_files/ongc.pkl',
-    'Reliance': './pikl_files/reliance.pkl',
-    'TATA Consultancy Services': './pikl_files/tcs.pkl',
-    'Tech Mahindra': './pikl_files/Techm.pkl',
-    'UPL': './pikl_files/upl.pkl',
-    'Wipro': './pikl_files/wipro.pkl',
+    'Adani': 'pikl_files\adani.pkl',
+    'Axis': 'pikl_files\Axis.pkl',
+    'Cipla': 'pikl_files\cipla.pkl',
+    'HCL':'pikl_files\hcl.pkl',
+    'HDFC Bank':'pikl_files\hdfcbank.pkl',
+    'Hindustan Unilever': 'pikl_files\hindunilvr.pkl',
+    'Infosys': 'pikl_files\infosys.pkl',
+    'ITC': 'pikl_files\itc.pkl',
+    'JSW Steel': 'pikl_files\jsw.pkl',
+    'ONGC': 'pikl_files\ongc.pkl',
+    'Reliance': 'pikl_files\reliance.pkl',
+    'TATA Consultancy Services': 'pikl_files\tcs.pkl',
+    'Tech Mahindra': 'pikl_files\Techm.pkl',
+    'Wipro': 'pikl_files\wipro.pkl',
 }
 
 
 df50 = getdataset()
-
 
 with open('pickle_model.pkl', 'rb') as file:
     nifty_pickle = pickle.load(file)

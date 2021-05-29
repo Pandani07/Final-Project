@@ -12,7 +12,7 @@ import json
 from datetime import datetime
 
 
-def getdataset():
+"""def getdataset():
     df50=pd.read_csv("NIFTY 50.csv")
     df50.head()
     df50.fillna(method="ffill", inplace=True)
@@ -35,9 +35,10 @@ def getdataset():
     return df50
     
 
-df50 = getdataset()
+df50 = getdataset()"""
 
-
+def getdataset():
+    return  pd.read_csv('NIFTY 50.csv')
 
 
 

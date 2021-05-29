@@ -1,20 +1,5 @@
 {% extends "header.html" %}
 {% block content %}
-
-<div class="jumbotron">
-    <h2 class=h2>Enter the number of forecast days</h2>
-    <form action="/send" method='POST'>
-
-        <label for="fdays">ForeCast Days</label>
-        <input type="text" name="forecastdays" placeholder="Forecast Days">
-
-        <input type="submit" value="prediction" id="predict_btn">
-    </form>
-
-    <h1>
-        The model predicts {{ prediction }} as the forecast for the next day    </h1>
-
-        
-</div>
+<img src='../static/images/banner_image.png'></img>
 
 {% endblock content %}
