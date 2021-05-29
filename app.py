@@ -30,6 +30,8 @@ pickle_dict = {
 }
 
 
+#email = user_input
+
 df50 = getdataset()
 
 with open('pickle_model.pkl', 'rb') as file:
@@ -68,6 +70,7 @@ def detect_trend():
     trend_value=str(prediction).strip('[]')
     if trend_value=='1':
         trend ='Uptrend'
+        #email send
     else:
         trend = 'Downtrend'
     return render_template('trend.html', rsi=rsi, trend=trend, company=company)
