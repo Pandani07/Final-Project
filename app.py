@@ -17,7 +17,7 @@ from scraping import company_dict
 import sendgrid
 import os
 from sendgrid.helpers.mail import *
-sg = sendgrid.SendGridAPIClient('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')
+sg = sendgrid.SendGridAPIClient('')
 
   
 pickle_dict = {
