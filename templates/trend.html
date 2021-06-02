@@ -10,6 +10,15 @@
             
             <form action="{{url_for('detect_trend')}}" method="POST" style="padding: 20px;">
 
+                <div style="margin: 0 auto; width: 400px;">
+                    <div class="form-group">
+                        <label>Email address</label>
+                        <input type="email" class="form-control" name="uemail" aria-describedby="emailHelp" placeholder="Enter email">
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    </div>
+                </div>
+                
+
                 <div class="text-center">
                     <h4>Get RSI value for 
                         <select style="padding: 5px;" name="company" id="">
@@ -41,19 +50,6 @@
                 <br>
 
             </form>
-
-
-            <div class="text-center">
-                <h4>The RSI value of {{ company }} is: {{rsi}}</h4>
-            </div>
-            <br>
-
-
-            <div class="text-center">
-                <h4>Trend is: {{trend}}</h4>
-            </div>
-            <br>
-
         <!-- </form> -->
     </div>
 

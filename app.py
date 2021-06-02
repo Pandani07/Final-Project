@@ -11,22 +11,28 @@ from preprocessing import getdataset
 from scraping import get_rsi, get_nse_rsi
 import pickle
 
+# Sendgrid API
+import sendgrid
+import os
+from sendgrid.helpers.mail import *
+sg = sendgrid.SendGridAPIClient('')
+
   
 pickle_dict = {
-    'Adani': 'pikl_files\adani.pkl',
-    'Axis': 'pikl_files\Axis.pkl',
-    'Cipla': 'pikl_files\cipla.pkl',
-    'HCL':'pikl_files\hcl.pkl',
-    'HDFC Bank':'pikl_files\hdfcbank.pkl',
-    'Hindustan Unilever': 'pikl_files\hindunilvr.pkl',
-    'Infosys': 'pikl_files\infosys.pkl',
-    'ITC': 'pikl_files\itc.pkl',
-    'JSW Steel': 'pikl_files\jsw.pkl',
-    'ONGC': 'pikl_files\ongc.pkl',
-    'Reliance': 'pikl_files\reliance.pkl',
-    'TATA Consultancy Services': 'pikl_files\tcs.pkl',
-    'Tech Mahindra': 'pikl_files\Techm.pkl',
-    'Wipro': 'pikl_files\wipro.pkl',
+    'Adani': 'pikl_files/adani.pkl',
+    'Axis': 'pikl_files/Axis.pkl',
+    'Cipla': 'pikl_files/cipla.pkl',
+    'HCL':'pikl_files/hcl.pkl',
+    'HDFC Bank':'pikl_files/hdfcbank.pkl',
+    'Hindustan Unilever': 'pikl_files/hindunilvr.pkl',
+    'Infosys': 'pikl_files/infosys.pkl',
+    'ITC': 'pikl_files/itc.pkl',
+    'JSW Steel': 'pikl_files/jsw.pkl',
+    'ONGC': 'pikl_files/ongc.pkl',
+    'Reliance': 'pikl_files/reliance.pkl',
+    'TATA Consultancy Services': 'pikl_files/tcs.pkl',
+    'Tech Mahindra': 'pikl_files/Techm.pkl',
+    'Wipro': 'pikl_files/wipro.pkl',
 }
 
 
@@ -53,6 +59,12 @@ def trend():
 def detect_trend():
     
     company = request.form['company']
+    uemail = request.form['uemail']
+
+    from_email = Email("amarthya10@gmail.com")
+    to_email = To(uemail)
+    subject = "Stock Prediction Result"
+    
 
     if company == 'NIFTY 50':
         rsi = get_nse_rsi()
@@ -71,9 +83,20 @@ def detect_trend():
     if trend_value=='1':
         trend ='Uptrend'
         #email send
+        text_content = 'RSI of ' + company + ' is ' + rsi + '\nTrend is ' + trend
+        content = Content("text/plain", text_content)
+        mail = Mail(from_email, to_email, subject, content)
+        response = sg.client.mail.send.post(request_body=mail.get())
+
     else:
         trend = 'Downtrend'
-    return render_template('trend.html', rsi=rsi, trend=trend, company=company)
+
+        text_content = 'RSI of ' + company + ' is ' + rsi + '\nTrend is ' + trend
+        content = Content("text/plain", text_content)
+        mail = Mail(from_email, to_email, subject, content)
+        response = sg.client.mail.send.post(request_body=mail.get())
+
+    return render_template('predict.html', rsi=rsi, trend=trend, company=company, uemail=uemail)
 
 
 
