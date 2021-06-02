@@ -11,11 +11,13 @@ from preprocessing import getdataset
 from scraping import get_rsi, get_nse_rsi
 import pickle
 
+from scraping import company_dict
+
 # Sendgrid API
 import sendgrid
 import os
 from sendgrid.helpers.mail import *
-sg = sendgrid.SendGridAPIClient('')
+sg = sendgrid.SendGridAPIClient('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')
 
   
 pickle_dict = {
@@ -59,6 +61,9 @@ def trend():
 def detect_trend():
     
     company = request.form['company']
+
+    company_url = company_dict.get(company)
+
     uemail = request.form['uemail']
 
     from_email = Email("amarthya10@gmail.com")
@@ -83,16 +88,17 @@ def detect_trend():
     if trend_value=='1':
         trend ='Uptrend'
         #email send
-        text_content = 'RSI of ' + company + ' is ' + rsi + '\nTrend is ' + trend
-        content = Content("text/plain", text_content)
+        html_content = '<h2 style="color: red">' + company + ' is ' + trend + '</h2>\
+        <a style="text-decoration: none" href='+ company_url +'>Buy Stock</a>'
+        content = Content("text/html", html_content)
         mail = Mail(from_email, to_email, subject, content)
         response = sg.client.mail.send.post(request_body=mail.get())
 
     else:
         trend = 'Downtrend'
 
-        text_content = 'RSI of ' + company + ' is ' + rsi + '\nTrend is ' + trend
-        content = Content("text/plain", text_content)
+        html_content = '<h2 style="color: red">' + company + ' is ' + trend + '</h2>'
+        content = Content("text/html", html_content)
         mail = Mail(from_email, to_email, subject, content)
         response = sg.client.mail.send.post(request_body=mail.get())
 

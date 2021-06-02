@@ -5,6 +5,7 @@ import argparse
 from collections import OrderedDict
 from bs4 import BeautifulSoup
 
+nse_url = "https://www.moneycontrol.com/technical-analysis/indian-indices/nifty-50-9"
 infy_url ='https://www.moneycontrol.com/technical-analysis/infosys/IT'
 techm_url = 'https://www.moneycontrol.com/technical-analysis/techmahindra/TM4'
 wipro_url = 'https://www.moneycontrol.com/technical-analysis/wipro/W'
@@ -22,6 +23,7 @@ itc_url = 'https://www.moneycontrol.com/technical-analysis/itc/ITC'
 tcs_url = 'https://www.moneycontrol.com/technical-analysis/tataconsultancyservices/TCS'
 
 company_dict = {
+    'NIFTY 50': nse_url,
     'Adani': adani_url,
     'Axis': axis_bank_url,
     'Cipla': cipla_url,
