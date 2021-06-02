@@ -1,11 +1,19 @@
 {% extends "header.html" %}
 {% block content %}
-<div id="about-section">
-    <div class="container">
+<style>
+    div.second{
+        opacity: 0.9;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;}
+</style>
+<link rel="stylesheet" href="../static/styles/styles.css"> 
+<div id="about-section" style="background-image: url('https://images6.alphacoders.com/114/1141549.png'); " >
+    <div class="container second">
                 <div class="jumbotron">
                         <h2 class="display-4">A little about our Project</h2>
                         <hr class="hr-1">
-                        <p class="lead"> <span class="name-special">Stock Trend Detection</span> was built to make buying a selling stocks easier <span class=name-special">for you</span></p>
+                        <p class="lead"> <span class="name-special">Stock Trend Detection</span> was built to make buying a selling stocks easier <span class="name-special">for you</span></p>
                         <p class="lead">Tech stack used:</p>
                         <ul>
                             <li>
@@ -37,6 +45,10 @@
                             </li>
                         </ul>
                         <p class="lead">Under the guidance of Dr. Naresh E</p>
+                        <hr class="my-4">
+
+                        <p class="lead">Department of Information Science and Engineering</p>
+                        <p class="lead">MS Ramaiah Institute of Technology</p>
                 </div>
     </div>
 </div>
