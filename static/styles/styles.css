@@ -89,3 +89,61 @@ button {
   .btn-3 span:hover:after {
     width: 100%;
   }
+
+.kSubHeading {
+  font-family: 'Spartan', sans-serif;
+}
+
+.kHeading {
+  font-family: 'DM Serif Display', serif;
+}
+
+* {
+  font-family: 'Alegreya Sans', sans-serif;
+}
+
+.kBox {
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+    margin-top: 30px; 
+    margin-bottom: 30px; 
+    padding: 40px;
+    background-color: #EBF5ED;
+}
+
+.kImg {
+  width: 80%; 
+  border-radius: 50%; border: 1px solid;
+}
+
+#naresh {
+  width: 20%;
+  margin-bottom: 20px;
+}
+
+.kLinkUserlink {
+  text-decoration: none;
+  color: black;
+}
+
+.kLinkUserlink:hover {
+  text-decoration: none;
+  color: black;   
+}
+
+
+.kLoading {
+  animation-name: load;
+  animation-timing-function: ease-in-out;
+  animation-duration: 0.7s;
+}
+
+@keyframes load {
+  from {
+      opacity: 0;
+      transform: translateY(30px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}

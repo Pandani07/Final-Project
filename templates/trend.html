@@ -1,9 +1,9 @@
 {% extends "header.html" %}
 {% block content %}
-    <div style="margin-top: 20px; padding: 10px; box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2); border-radius: 25px;" class="container">
+    <div class="kBox container kLoading">
         
         <center>
-            <h1><i class="fas fa-chart-bar"></i> Trend Detection</h1>
+            <h1 class="kHeading"><i class=" fas fa-chart-bar"></i> Trend Detection</h1>
         </center>
 
         <!-- <form action="{{url_for('trend')}}" method="POST" class="border rounded" style="padding: 20px;"> -->
@@ -12,16 +12,16 @@
 
                 <div style="margin: 0 auto; width: 400px;">
                     <div class="form-group">
-                        <label>Email address</label>
+                        <center><label class="">Email address</label></center>
                         <input type="email" class="form-control" name="uemail" aria-describedby="emailHelp" placeholder="Enter email">
-                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                        <center> <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> </center>
                     </div>
                 </div>
                 
 
                 <div class="text-center">
-                    <h4>Get RSI value for 
-                        <select style="padding: 5px;" name="company" id="">
+                    <label> <span class="">Get RSI value for</span> </label> <br> <br> 
+                        <select class="form-control" style="margin: 0 auto; width: 400px; padding: 5px;" name="company" id="">
                             <option value="NIFTY 50">NIFTY 50</option>
                             <option value="Adani">Adani</option>
                             <option value="Axis">Axis Bank</option>
@@ -39,7 +39,6 @@
                             <option value="UPL">UPL</option>
                             <option value="Wipro">Wipro</option>
                         </select>
-                    </h4>
                 </div>
 
                 

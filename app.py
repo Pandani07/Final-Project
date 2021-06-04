@@ -17,7 +17,7 @@ from scraping import company_dict
 import sendgrid
 import os
 from sendgrid.helpers.mail import *
-sg = sendgrid.SendGridAPIClient('')
+sg = sendgrid.SendGridAPIClient('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')
 
   
 pickle_dict = {
@@ -88,8 +88,16 @@ def detect_trend():
     if trend_value=='1':
         trend ='Uptrend'
         #email send
-        html_content = '<h2 style="color: red">' + company + ' is ' + trend + '</h2>\
-        <a style="text-decoration: none" href='+ company_url +'>Buy Stock</a>'
+        html_content = '<head>\
+                            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.0/css/all.css" integrity="sha384-OLYO0LymqQ+uHXELyx93kblK5YIS3B2ZfLGBmsJaUyor7CpMTBsahDHByqSuWW+q" crossorigin="anonymous">\
+                            <link rel="preconnect" href="https://fonts.gstatic.com">\
+                            <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans&family=DM+Serif+Display&family=Spartan&display=swap" rel="stylesheet">\
+                        </head>\
+                        <div style="padding:40px; background-color: black">\
+                            <h1 style="color: white; font-family: '+ 'DM Serif Display'+ '", serif;"> <i class="far fa-chart-bar"></i>  Stock Prediction</h1>\
+                            <h2 style="color: white; font-family: ' + 'Alegreya Sans' + ', sans-serif;">' + company + ' is ' + trend + '</h2>\
+                            <center> <a style="text-decoration: none; color: white; padding: 20px; border: 1px solid white; background-color: #0A80FB;" href='+ company_url +'>Buy Stock</a> <center>\
+                        </div>'
         content = Content("text/html", html_content)
         mail = Mail(from_email, to_email, subject, content)
         response = sg.client.mail.send.post(request_body=mail.get())
