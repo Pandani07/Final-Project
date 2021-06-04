@@ -2,6 +2,46 @@
 {% block content %}
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
+<style>
+  .vizclass {
+    margin: 15px;
+    display: block;
 
+    /* border-left-style: solid;
+    border-color: rgba(0, 0, 0, 0.5); */
+  }
+
+  .chart{
+    float: left;
+    padding: 20px;
+    border-left-style: solid;
+  }
+
+  .explain{
+    float: left;
+  }
+
+</style>
+
+<div class="vizclass">
+
+  <div class="chart" id="bargraph">
+    <script type=”text/javascript”>
+        var graphs = {{image}}
+      </script>
+    <br>
+    <h4> This is an interactive plot that can be used to get information on prices</h4>
+
+  </div>
+
+  <div class="explain">
+
+  </div>
+
+  <div id="moreunits">
+    <img src="../static/images/moreunits.png" alt="User Image" width=700, height=400>
+  </div>
+
+</div>
 
 {% endblock content %}
