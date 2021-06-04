@@ -1,18 +1,30 @@
-{% extends "header.html" %}
-{% block content %}
- <style>
-    body{
-        background-color: white;
-    }
+{% extends "header.html" %} {% block content %}
+<style>
+  #about-section > * {
+    display: block;
+    text-align: center;
+    margin: 20px;
+  }
+  .prediction_link {
+    height: 30%;
+    width: 30%;
+    padding: 10px;
+    border-left-style: solid;
+    border-bottom-style: solid ;
+  }
+
+  .detect_link {
+    height: 30%;
+    width: 30%;
+    padding: 10px;
+    border-left-style: solid;
+    border-bottom-style: solid ;
+
+  }
 </style>
 <body>
-    <div class="container kBox kLoading">
-        <h5 style="padding: 20px;" class="kHeading display-4">Use this website to make your trading decisions for you</h5>
-        <hr class="hr-1">
-        <div class="text-center">
-            <button style="width: 350px;" onclick="window.location.href='visualize'" class="custom-btn btn-3"><span>View the results of our forecasting model</span></button>
-        </div>
 
     </div>
+  </div>
 </body>
 {% endblock content %}

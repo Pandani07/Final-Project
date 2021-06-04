@@ -111,7 +111,7 @@ def detect_trend():
 
 @app.route('/visualize', methods=['GET', 'POST'])
 def visualize():
-    fig=px.line(df50, x='Date',y='Open', title='Nifty 50 Closing Price vs Date')
+    fig=px.line(df50, x='Date',y='Open', title='Nifty 50 Closing Price vs Date', width=800, height=400)
     image = HTML(fig.to_html())
     return render_template("visualize.html",image=image)
 
@@ -119,8 +119,6 @@ def visualize():
 def projectlink():
     project_link = 'https://github.com/Pandani07/Final-Project'
     return render_template("projectlink.html", project_link = project_link)
-
-
 
 if __name__ == "__main__":
     app.run(debug=True)
