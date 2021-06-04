@@ -88,8 +88,11 @@ def detect_trend():
     if trend_value=='1':
         trend ='Uptrend'
         #email send
-        html_content = '<h2 style="color: red">' + company + ' is ' + trend + '</h2>\
-        <a style="text-decoration: none" href='+ company_url +'>Buy Stock</a>'
+        html_content = '<div style="padding:40px; background-color: black">\
+                            <h1> <i class="far fa-chart-bar"></i>  Stock Prediction</h1>\
+                            <h2>' + company + ' is ' + trend + '</h2>\
+                            <center> <a style="text-decoration: none; color: white; padding: 20px; border: 1px solid white; background-color: #0A80FB;" href='+ company_url +'>Buy Stock</a> <center>\
+                        </div>'
         content = Content("text/html", html_content)
         mail = Mail(from_email, to_email, subject, content)
         response = sg.client.mail.send.post(request_body=mail.get())
