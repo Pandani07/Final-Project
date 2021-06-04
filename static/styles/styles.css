@@ -147,3 +147,16 @@ button {
       transform: translateY(0);
   }
 }
+
+.kNavItem {
+  margin-left: 20px;
+}
+
+.kNavLinkText:hover {
+  color: white;
+  font-weight: bold;
+  transform: translateX(5px);
+  transform-origin: center;
+  transition: ease-out;
+  transition-duration: 0.2s;
+}
