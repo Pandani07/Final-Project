@@ -90,17 +90,6 @@ button {
     width: 100%;
   }
 
-.kSubHeading {
-  font-family: 'Spartan', sans-serif;
-}
-
-.kHeading {
-  font-family: 'DM Serif Display', serif;
-}
-
-* {
-  font-family: 'Alegreya Sans', sans-serif;
-}
 
 .kBox {
     box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
@@ -153,10 +142,15 @@ button {
 }
 
 .kNavLinkText:hover {
-  color: white;
+  color: black;
   font-weight: bold;
   transform: translateX(5px);
   transform-origin: center;
   transition: ease-out;
   transition-duration: 0.2s;
 }
+
+.kTileIcon {
+  position: absolute; opacity: 0.3; right: 0px; bottom: 0px;
+}
+
