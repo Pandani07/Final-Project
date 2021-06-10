@@ -1,5 +1,5 @@
 lxml==4.6.3
-tensorflow==2.5.0
+tensorflow-cpu==2.5.0
 sendgrid==6.7.0
 plotly==4.14.3
 numpy==1.19.5
