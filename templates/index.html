@@ -1,5 +1,5 @@
 {% extends "header.html" %} {% block content %}
-<style>
+<!-- <style>
   #about-section > * {
     display: block;
     text-align: center;
@@ -21,27 +21,44 @@
     border-bottom-style: solid ;
 
   }
-</style>
+</style> -->
 <body>
-  <div id="about-section">
-    <div class="prediction_link">
-      <h3 class="display-6">
-        Use this website to make your trading decisions for you
-      </h3>
-      <hr class="hr-1" />
-      <a class="btn btn-primary" href="visualize" role="button"
-        >View the results of our forecasting model</a
-      >
-    </div>
-    <div class="detect_link">
-      <h3 class="display-6">
-        Our Machine Learning and Deep Learning algorithms were built using data
-        from the NSE of India
-      </h3>
+
+  <div class="container">
+    
+    <div class="row">
       
-      <hr class="hr-1" />
-      <a class="btn btn-primary" href="visualize" role="button">View our project code on Github</a>
+      <div class="col-lg-5 kBox justify-content-md-center">
+        
+          <h3 class="display-6">
+            Use this website to make your trading decisions for you
+          </h3>
+          <hr class="hr-1" />
+          <div class="text-center">
+            <button style="width: 350px;" onclick="window.location.href='visualize'" class="custom-btn btn-3"><span>View the results of our forecasting model <i class="fas fa-search-dollar"></i> </span></button>
+          </div>
+      </div>
+
+      <div class="col-lg-2"></div>
+
+      <div class="col-lg-5 kBox">
+        <h3 class="display-6">
+          Our Machine Learning and Deep Learning algorithms were built using data
+          from the NSE of India
+        </h3>
+        
+        <hr class="hr-1" />
+        <div class="text-center">
+          <button style="width: 350px;" onclick="window.location.href='{{project_link}}'" class="custom-btn btn-3"><span>View our project files on GitHub! <i class="fab fa-github"></i> </span></button>
+        </div>
+      </div>
     </div>
+  </div>
+  
+
+  <div id="about-section">
+    
+    
   </div>
 </body>
 {% endblock content %}
