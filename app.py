@@ -17,7 +17,7 @@ from scraping import company_dict
 import sendgrid
 import os
 from sendgrid.helpers.mail import *
-sg = sendgrid.SendGridAPIClient('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')
+sg = sendgrid.SendGridAPIClient('SG.s3zLZHNZR0uH4sHoVNSj6A.SmX4nNLxn-jCmHxl1ZkxqOmGQk4XkqY7CY0V1wnkIK4')
 
   
 pickle_dict = {
@@ -66,7 +66,7 @@ def detect_trend():
 
     uemail = request.form['uemail']
 
-    from_email = Email("amarthya10@gmail.com")
+    from_email = Email("stockforecasting21@gmail.com")
     to_email = To(uemail)
     subject = "Stock Prediction Result"
     
