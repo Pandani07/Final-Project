@@ -4,7 +4,8 @@ Steps to run:
 
 Clone repo
 Navigate to project folder in cmd 
-Create new virtual environment using  ''' python 
+Create new virtual environment using  
+'''python 
 virtualenv flask 
 '''
 4. Cd into virtual environment using > <i> **cd flask** </i> and activate the environment using > <i>**source bin/activate**</i>
