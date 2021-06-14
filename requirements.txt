@@ -7,7 +7,7 @@ Flask==1.1.2
 seaborn==0.11.1
 pandas==1.2.4
 requests==2.25.1
-matplotlib==3.3.4
+matplotlib==3.2
 chart_studio==1.1.0
 beautifulsoup4==4.9.3
 ipython==7.24.1
