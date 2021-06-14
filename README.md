@@ -2,7 +2,7 @@
 
 Steps to run:
 
-1. Clone repo
+1. Clone repo using url https://github.com/Pandani07/Final-Project.git
 2. Navigate to project folder in cmd 
 3. Create new virtual environment using > <i>**virtualenv flask**</i>
 4. Cd into virtual environment using > <i> **cd flask** </i> and activate the environment using > <i>**source bin/activate**</i>
