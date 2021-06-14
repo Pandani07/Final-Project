@@ -3,8 +3,11 @@
 Steps to run:
 
 1. Clone repo
-2. Navigate to project folder in cmd and install requirements using the command <i>pip install -r requirements.txt</i>
-3. Execute "python app.py"
+2. Navigate to project folder in cmd 
+3. Create new virtual environment using <i> virtualenv flask </i>
+4. Cd into virtual environment using <i> cd flask </i> and activate the environment using <i> source bin/activate </i>
+5. Go back to project's root directory and install requirements using the command <i>pip install -r requirements.txt</i>
+7. Execute "python app.py"
 
 Server will be running on http://127.0.0.1:5000/ 
 
