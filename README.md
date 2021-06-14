@@ -23,7 +23,7 @@ final-project
    <ul><li>styles</li></ul>
    <li>templates</li>
    <li>app.py</li>
-   <li>indicators.p</li>
+   <li>indicators.py</li>
    <li>mldlfile.py</li>
    <li>model_100.h5</li>
    <li>neuralnetwork.py</li>
@@ -43,7 +43,7 @@ final-project
    <ul><li>styles</li></ul>
    <li>templates</li>
    <li>app.py</li>
-   <li>indicators.p</li>
+   <li>indicators.py</li>
    <li>mldlfile.py</li>
    <li>model_100.h5</li>
    <li>neuralnetwork.py</li>
