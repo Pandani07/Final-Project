@@ -3,14 +3,12 @@
 Steps to run:
 
 1. Clone repo
-2. Install requirements
-3. Navigate to project folder in cmd
-4. run "python app.py"
+2. Navigate to project folder in cmd and install requirements using the command <i>pip install -r requirements.txt</i>
+3. Execute "python app.py"
 
 Server will be running on http://127.0.0.1:5000/ 
 
-### We have added pikl files to gitignore due to storage constraints. Goodle drive link with all pikl files has been provided. Extract into a folder called 'pikl_files' in project directory. Pikl model for NIFTY 50 is the 'pickle_model.pkl' in project root directory. Delete pikl_files folder whenever you are pushing into Github.
-
+Sometimes, pikl file wont be cloned. Use the below link to download pikl files and paste them in the project root directory.
 pikl models drive link - https://drive.google.com/drive/folders/1aD0zK3_UQ1WJuHdNNgO49vIW_88xVwhb?usp=sharing
 
 ### Project Directory structure:
