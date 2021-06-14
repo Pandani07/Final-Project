@@ -2,9 +2,11 @@
 
 Steps to run:
 
-1. Clone repo
-2. Navigate to project folder in cmd 
-3. Create new virtual environment using  ''' python <i> **virtualenv flask**</i> '''
+Clone repo
+Navigate to project folder in cmd 
+Create new virtual environment using  ''' python 
+virtualenv flask 
+'''
 4. Cd into virtual environment using > <i> **cd flask** </i> and activate the environment using > <i>**source bin/activate**</i>
 5. Go back to project's root directory and install requirements using the command > <i>**pip install -r requirements.txt**</i>
 7. Execute > <i>**python app.py**</i>
