@@ -1,55 +1,93 @@
-{% extends "header.html" %}
-{% block content %}
-    <div class="kBox container kLoading">
-        
+{% extends "header.html" %} {% block content %}
+<div class="kBox container kLoading" style="height: 60%">
+  <center>
+    <h1 class="kHeading"><i class="fas fa-chart-bar"></i> Trend Detection</h1>
+  </center>
+
+  <!-- <form action="{{url_for('trend')}}" method="POST" class="border rounded" style="padding: 20px;"> -->
+
+  <form
+    action="{{url_for('detect_trend')}}"
+    method="POST"
+    style="padding: 20px"
+  >
+    <div style="margin: 0 auto; width: 400px">
+      <div class="form-group">
+        <center><label class="">Email address</label></center>
+        <input
+          type="email"
+          class="form-control"
+          name="uemail"
+          aria-describedby="emailHelp"
+          placeholder="Enter email"
+        />
         <center>
-            <h1 class="kHeading"><i class=" fas fa-chart-bar"></i> Trend Detection</h1>
+          <small id="emailHelp" class="form-text text-muted"
+            >We'll never share your email with anyone</small
+          >
         </center>
-
-        <!-- <form action="{{url_for('trend')}}" method="POST" class="border rounded" style="padding: 20px;"> -->
-            
-            <form action="{{url_for('detect_trend')}}" method="POST" style="padding: 20px;">
-
-                <div style="margin: 0 auto; width: 400px;">
-                    <div class="form-group">
-                        <center><label class="">Email address</label></center>
-                        <input type="email" class="form-control" name="uemail" aria-describedby="emailHelp" placeholder="Enter email">
-                        <center> <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> </center>
-                    </div>
-                </div>
-                
-
-                <div class="text-center">
-                    <label> <span class="">Get RSI value for</span> </label> <br> <br> 
-                        <select class="form-control" style="margin: 0 auto; width: 400px; padding: 5px;" name="company" id="">
-                            <option value="NIFTY 50">NIFTY 50</option>
-                            <option value="Adani">Adani</option>
-                            <option value="Axis">Axis Bank</option>
-                            <option value="Cipla">Cipla</option>
-                            <option value="HCL">HCL</option>
-                            <option value="HDFC Bank">HDFC Bank</option>
-                            <option value="Hindustan Unilever">Hindustan Unilever</option>
-                            <option value="Infosys">Infosys</option>
-                            <option value="ITC">ITC</option>
-                            <option value="JSW Steel">JSW Steel</option>
-                            <option value="ONGC">ONGC</option>
-                            <option value="Reliance">Reliance</option>
-                            <option value="TATA Consultancy Services">TATA Consultancy Services</option>
-                            <option value="Tech Mahindra">Tech Mahindra</option>
-                            <option value="UPL">UPL</option>
-                            <option value="Wipro">Wipro</option>
-                        </select>
-                </div>
-
-                
-                <br>
-                <div class="text-center">
-                    <button type="submit" class="custom-btn btn-3"><span>Submit</span></button>
-                </div>
-                <br>
-                <!-- <img class="kTileIcon" style="width: 30%;" src="{{url_for('static',filename = 'images/bg_icons/stocks.png')}}" alt="" srcset="">1 -->
-            </form>
-        <!-- </form> -->
+      </div>
     </div>
+    <div class="text-center">
+      <label> <span class="">Get trend for</span> </label> <br />
+      <select
+        class="form-control"
+        style="margin: 0 auto; width: 400px; padding: 5px"
+        name="company"
+        id=""
+      >
+        <option value="NIFTY 50">NIFTY 50</option>
+        <option value="Adani">Adani</option>
+        <option value="Axis">Axis Bank</option>
+        <option value="Cipla">Cipla</option>
+        <option value="HCL">HCL</option>
+        <option value="HDFC Bank">HDFC Bank</option>
+        <option value="Hindustan Unilever">Hindustan Unilever</option>
+        <option value="Infosys">Infosys</option>
+        <option value="ITC">ITC</option>
+        <option value="JSW Steel">JSW Steel</option>
+        <option value="ONGC">ONGC</option>
+        <option value="Reliance">Reliance</option>
+        <option value="TATA Consultancy Services">
+          TATA Consultancy Services
+        </option>
+        <option value="Tech Mahindra">Tech Mahindra</option>
+        <option value="UPL">UPL</option>
+        <option value="Wipro">Wipro</option>
+      </select>
+    </div>
+
+    <br />
+    <div class="text-center">
+      <button type="submit" class="btn btn-primary btn-rounded" style=" width: 130px;
+    height: 40px; font-weight: 500; font-size: large; border-radius: 5px;">
+        <span>Detect</span>
+      </button>
+    </div>
+    <br />
+    <button
+      type="button"
+      style="border-radius: 5px;"
+      class="btn btn-info btn-rounded"
+      data-toggle="popover"
+      title=""
+      data-trigger="focus"
+      data-content="The stock market website used for reference in this project is <a href='https://www.moneycontrol.com/'>Money Control</a> "
+    >
+      Disclaimer
+    </button>
+
+    <!-- <img class="kTileIcon" style="width: 30%;" src="{{url_for('static',filename = 'images/bg_icons/stocks.png')}}" alt="" srcset="">1 -->
+  </form>
+  <!-- </form> -->
+</div>
+<script>
+  $(function () {
+    $('[data-toggle="popover"]').popover({html:true});
+  });
+  $('.popover-dismiss').popover({
+  trigger: 'focus'
+})
+</script>
 
 {% endblock content %}

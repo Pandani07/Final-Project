@@ -88,10 +88,10 @@ def detect_trend():
     if trend_value=='1':
         trend ='Uptrend'
         #email send
-        html_content = '<div style="padding:40px; background-color: black">\
+        html_content = '<div style="padding:40px;">\
                             <h1> <i class="far fa-chart-bar"></i>  Stock Prediction</h1>\
                             <h2>' + company + ' is ' + trend + '</h2>\
-                            <center> <a style="text-decoration: none; color: white; padding: 20px; border: 1px solid white; background-color: #0A80FB;" href='+ company_url +'>Buy Stock</a> <center>\
+                            <center> <a style="text-decoration: none; color: white; padding: 20px; border: 1px solid white; background-color: #0A80FB;" href='+ company_url +'>View Stock</a> <center>\
                         </div>'
         content = Content("text/html", html_content)
         mail = Mail(from_email, to_email, subject, content)

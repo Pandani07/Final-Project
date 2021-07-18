@@ -20,6 +20,7 @@ button {
     outline: none;
 }
 
+
 .btn-3 {
     background: rgb(0,172,238);
   background: linear-gradient(0deg, rgba(0,172,238,1) 0%, rgba(2,126,251,1) 100%);
@@ -93,21 +94,16 @@ button {
 
 .kBox {
     box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
-    margin-top: 30px; 
-    margin-bottom: 30px; 
+    margin-top: 100px; 
+    margin-bottom: 20px; 
     padding: 40px;
     background-color: #EBF5ED;
+    height: fit-content;
 }
 
-.kImg {
-  width: 80%; 
-  border-radius: 50%; border: 1px solid;
-}
 
-#naresh {
-  width: 20%;
-  margin-bottom: 20px;
-}
+
+
 
 .kLinkUserlink {
   text-decoration: none;
