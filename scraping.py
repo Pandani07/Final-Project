@@ -24,7 +24,6 @@ tcs_url = 'https://www.moneycontrol.com/technical-analysis/tataconsultancyservic
 
 company_dict = {
     'NIFTY 50': nse_url,
-    'Adani': adani_url,
     'Axis': axis_bank_url,
     'Cipla': cipla_url,
     'HCL':hcl_url,

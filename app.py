@@ -21,28 +21,27 @@ sg = sendgrid.SendGridAPIClient('SG.s3zLZHNZR0uH4sHoVNSj6A.SmX4nNLxn-jCmHxl1Zkxq
 
   
 pickle_dict = {
-    'Adani': 'pikl_files/adani.pkl',
     'Axis': 'pikl_files/Axis.pkl',
-    'Cipla': 'pikl_files/cipla.pkl',
-    'HCL':'pikl_files/hcl.pkl',
-    'HDFC Bank':'pikl_files/hdfcbank.pkl',
-    'Hindustan Unilever': 'pikl_files/hindunilvr.pkl',
-    'Infosys': 'pikl_files/infosys.pkl',
-    'ITC': 'pikl_files/itc.pkl',
-    'JSW Steel': 'pikl_files/jsw.pkl',
-    'ONGC': 'pikl_files/ongc.pkl',
-    'Reliance': 'pikl_files/reliance.pkl',
-    'TATA Consultancy Services': 'pikl_files/tcs.pkl',
+    'Cipla': 'pikl_files/Cipla.pkl',
+    'HCL':'pikl_files/HCL.pkl',
+    'HDFC Bank':'pikl_files/HDFC.pkl',
+    'Hindustan Unilever': 'pikl_files/Hindunilvr.pkl',
+    'Infosys': 'pikl_files/Infosys.pkl',
+    'ITC': 'pikl_files/ITC.pkl',
+    'JSW Steel': 'pikl_files/jswsteel.pkl',
+    'ONGC': 'pikl_files/Ongc.pkl',
+    'Reliance': 'pikl_files/Reliance.pkl',
+    'TATA Consultancy Services': 'pikl_files/TCS.pkl',
     'Tech Mahindra': 'pikl_files/Techm.pkl',
-    'Wipro': 'pikl_files/wipro.pkl',
+    'Wipro': 'pikl_files/Wipro.pkl',
+    'UPL': 'pikl_files/UPL.pkl'
 }
-
 
 #email = user_input
 
 df50 = getdataset()
 
-with open('pickle_model.pkl', 'rb') as file:
+with open('classifier.pkl', 'rb') as file:
     nifty_pickle = pickle.load(file)
     
 app = Flask(__name__)
