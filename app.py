@@ -71,16 +71,16 @@ def detect_trend():
     
 
     if company == 'NIFTY 50':
-        rsi = get_nse_rsi()
-        prediction = nifty_pickle.predict([[rsi]])
+        rsi, macd, roc = get_nse_rsi()
+        prediction = nifty_pickle.predict([[rsi, macd, roc]])
     else:
-        rsi = get_rsi(company)
+        rsi, macd, roc = get_rsi(company)
         
         pickle_file = pickle_dict.get(company)
         with open(pickle_file, 'rb') as file:
             company_pickle = pickle.load(file)
         
-        prediction = company_pickle.predict([[rsi]])
+        prediction = company_pickle.predict([[rsi, macd, roc]])
         
     
     trend_value=str(prediction).strip('[]')
@@ -104,7 +104,7 @@ def detect_trend():
         mail = Mail(from_email, to_email, subject, content)
         response = sg.client.mail.send.post(request_body=mail.get())
 
-    return render_template('predict.html', rsi=rsi, trend=trend, company=company, uemail=uemail)
+    return render_template('predict.html', rsi=rsi, trend=trend,macd=macd, roc=roc, company=company, uemail=uemail)
 
 
 

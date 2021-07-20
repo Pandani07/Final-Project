@@ -48,11 +48,15 @@ def get_rsi(company):
     response = requests.get(url)
     soup = BeautifulSoup(response.text, 'lxml')
     rsi = soup.find_all('div', {'class':'mt20'})[3].find_all('td')[1].text
-    return rsi
+    macd = soup.find_all('div', {'class':'mt20'})[3].find_all('td')[4].text
+    roc = soup.find_all('div', {'class':'mt20'})[3].find_all('td')[10].text
+    return rsi, macd, roc
 
 def get_nse_rsi():
     nse_url = "https://www.moneycontrol.com/technical-analysis/indian-indices/nifty-50-9"
     response = requests.get(nse_url)
     soup = BeautifulSoup(response.text, 'lxml')
     rsi = soup.find_all('div', {'class':'mtindi FR'})[0].find('div', {'class':'mt20'}).find_all('td')[1].text
-    return rsi
+    macd = soup.find_all('div', {'class':'mtindi FR'})[0].find('div', {'class':'mt20'}).find_all('td')[4].text
+    roc = soup.find_all('div', {'class':'mtindi FR'})[0].find('div', {'class':'mt20'}).find_all('td')[10].text
+    return rsi, macd, roc
